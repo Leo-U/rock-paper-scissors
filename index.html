@@ -22,42 +22,119 @@
         }
        }
 
+
        // write a function that plays a single round of RPS, having two parameters - playerSelection and computerSelection, and that returns a string declaring whether you win or lose. Make the function case insensitive so that users can input their answers in any case.
        
-       
-       
-
        function playRound(playerSelection, computerSelection) {
            playerSelection = playerSelection.toUpperCase();
            computerSelection = computerSelection.toUpperCase();
+           
 
         if (playerSelection === computerSelection) {
-            return "Tie!"
+            console.log("Computer plays the same. Round tied!")
+            let result = 0;
+            return result;
         } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-            return "You lose! Paper beats Rock."
+            console.log("Computer plays Paper. You lost the round!");
+            let result = -1;
+            return result;
         } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-            return "You win! Rock beats Scissors."
+            console.log("Computer plays Scissors. You won the round!");
+            let result = 1;
+            return result;
         } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-            return "You win! Paper beats Rock."
+            console.log("Computer plays Rock. You won the round!")
+            let result = 1;
+            return result;
         } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-            return "You lose! Scissors beats Paper."
+            console.log("Computer plays Scissors. You lost the round!")
+            let result = -1;
+            return result;
         } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-            return "You lose! Rock beats Scissors."
+            console.log("Computer plays Rock! You lost the round!")
+            let result = -1;
+            return result;
         } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-            return "You win! Scissors beats Paper."
+            console.log("Computer plays Paper. You won the round!")
+            let result = 1;
+            return result;
         } else {
-            return "Invalid entry."
+            console.log("Invalid entry! You lost the round!")
+            let result = -1;
+            return result;
         }
        }
 
        //write a function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 
+       
+       
+
        function game() {
-        let playerSelection = window.prompt("Play Rock Paper Scissors!");
         
+        function round1() {
+            computerPlay();
+            let playerSelection = window.prompt("Play Rock Paper Scissors!");
+            let score = playRound(playerSelection, computerSelection);
+            return score;
+        }
         
+        let score = round1();
+        console.log(score);
+
+        function round2() {
+            computerPlay();
+            let playerSelection = window.prompt("Play Round 2/5!");
+            let score = playRound(playerSelection, computerSelection);
+            return score;
+        }
+
+        score = score + round2();
+        console.log(score);
+        
+        function round3() {
+            computerPlay();
+            let playerSelection = window.prompt("Play Round 3/5!");
+            let score = playRound(playerSelection, computerSelection);
+            return score;    
+        }
+        
+        score = score + round3();
+        console.log(score);
+
+        function round4() {
+            computerPlay();
+            let playerSelection = window.prompt("Play Round 4/5!");
+            let score = playRound(playerSelection, computerSelection);
+            return score;    
+        }
+        
+        score = score + round4();
+        console.log(score);
+
+        function round5() {
+            computerPlay();
+            let playerSelection = window.prompt("Play Round 5!");
+            let score = playRound(playerSelection, computerSelection);
+            return score;    
+        }
+        
+        score = score + round5();
+        
+        if (score > 0) {
+            console.log(score);
+            console.log("You won the game!")
+        } else if (score < 0) {
+            console.log(score);
+            console.log("You lost the game!")
+        } else {
+            console.log(score);
+            console.log("You tied the game!")
+        }
+
        }
 
+       alert ("Type 'game()'' in the browser console to play Rock Paper Scissors!")
     </script>
 </body>
 </html>
