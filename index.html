@@ -102,6 +102,12 @@
         score = score + round3();
         console.log(score);
 
+        if (score === 3) {
+            console.log("You won the first 3 rounds and won the game automatically.")
+        } else if (score === -3) {
+            console.log("You lost the first 3 rounds and lost the game automatically.")
+        } else {
+
         function round4() {
             computerPlay();
             let playerSelection = window.prompt("Play Round 4/5!");
@@ -111,6 +117,13 @@
         
         score = score + round4();
         console.log(score);
+
+        if (score === 2) {
+            console.log("Your score is 2 on round 4. You win the game automatically.")
+        } else if (score === -2) {
+            console.log("Your score is -2 on round 4. You lost the game automatically.")
+        } else {
+
 
         function round5() {
             computerPlay();
@@ -131,10 +144,13 @@
             console.log(score);
             console.log("You tied the game!")
         }
+            }
 
+            }
+        
        }
 
-       alert ("Type 'game()' in the browser console to play Rock Paper Scissors!")
+       alert ("Type 'game()' in the browser console to play Rock Paper Scissors (close this alert first)!")
     </script>
 </body>
 </html>
