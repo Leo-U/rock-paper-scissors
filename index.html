@@ -118,10 +118,14 @@
         score = score + round4();
         console.log(score);
 
-        if (score >= 2) {
-            console.log("Your score is 2 or higher on round 4. You win the game automatically.")
-        } else if (score <= -2) {
-            console.log("Your score is -2 or lower on round 4. You lost the game automatically.")
+        if (score === 2) {
+            console.log("Your score is 2 on round 4. You win the game automatically.")
+        } else if (score === 3) {
+            console.log("Your score is 3 on round 4. You win the game automatically.")
+        } else if (score === -2) {
+            console.log("Your score is -2 on round 4. You lost the game automatically.")
+        } else if (score === -3) {
+            console.log("Your score is -3 on round 4. You lost the game automatically.")
         } else {
 
 
